@@ -1,27 +1,11 @@
-import React, { useState, useEffect, useRef, MutableRefObject } from "react";
+import React, { useEffect, useRef, MutableRefObject } from "react";
 import Navbar from "@/components/shared/Navbar";
 import axios from "axios";
 import PorductCard from "@/components/card/ProductCard";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/useCart";
 
-/*interface ProductProps {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  description: string;
-  image: string;
-  rating: {
-    count: number;
-    rate: number;
-  };
-}
-
-type AllProductProps = Array<ProductProps>;*/
-
 const Home = () => {
-  //const [products, setProducts] = useState<AllProductProps>();
   const { products, setProducts } = useCart();
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>;
 
