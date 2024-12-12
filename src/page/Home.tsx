@@ -3,9 +3,10 @@ import Navbar from "@/components/shared/Navbar";
 import axios from "axios";
 import PorductCard from "@/components/card/ProductCard";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/hooks/useCart";
 
-interface ProductProps {
-  id: string;
+/*interface ProductProps {
+  id: number;
   title: string;
   price: number;
   category: string;
@@ -17,10 +18,11 @@ interface ProductProps {
   };
 }
 
-type AllProductProps = Array<ProductProps>;
+type AllProductProps = Array<ProductProps>;*/
 
 const Home = () => {
-  const [products, setProducts] = useState<AllProductProps>();
+  //const [products, setProducts] = useState<AllProductProps>();
+  const { products, setProducts } = useCart();
   const targetRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const handleScroll = () => targetRef.current.scrollIntoView();
@@ -37,9 +39,7 @@ const Home = () => {
       }
     };
     getAllProducts();
-  }, []);
-
-  console.log(products);
+  }, [setProducts]);
 
   return (
     <div className="relative">
@@ -72,6 +72,7 @@ const Home = () => {
                 rate={item.rating.rate}
                 count={item.rating.count}
                 price={item.price}
+                id={item.id}
               />
             ))}
         </div>
