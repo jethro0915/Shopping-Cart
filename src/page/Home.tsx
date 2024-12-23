@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, MutableRefObject } from "react";
+import { useEffect, useRef, MutableRefObject } from "react";
 import Navbar from "@/components/shared/Navbar";
 import axios from "axios";
 import PorductCard from "@/components/card/ProductCard";

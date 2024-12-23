@@ -1,4 +1,3 @@
-import React from "react";
 import { ShoppingCart, ShoppingBasket } from "lucide-react";
 import { MonitorSpeaker } from "lucide-react";
 import {
