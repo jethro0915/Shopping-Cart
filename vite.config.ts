@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/your-repository-name/",
+  base: "/Shopping-Cart/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
