@@ -25,26 +25,24 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 z-10 flex justify-between items-center py-3 px-10 border-b shadow-md w-full bg-white max-sm:px-3">
       <div className="flex items-center gap-1 text-blue-700">
-        <MonitorSpeaker width={52} height={52} />
-        <span className="text-5xl font-bold">TheElectronics</span>
+        <MonitorSpeaker className="w-[52px] h-[52px] max-sm:w-[30px] max-sm:h-[30px]" />
+        <span className="text-5xl font-bold max-sm:text-2xl">
+          TheElectronics
+        </span>
       </div>
 
       <Sheet>
         <SheetTrigger asChild>
           <div className="p-3 border border-blue-600 rounded-full cursor-pointer group hover:bg-blue-700">
-            <ShoppingCart
-              width={30}
-              height={30}
-              className="fill-current text-blue-700 group-hover:text-white"
-            />
+            <ShoppingCart className="w-[30px] h-[30px] fill-current text-blue-700 group-hover:text-white max-sm:w-[20px] max-sm:h-[20px]" />
             {cartItemTotal > 0 && (
-              <div className="bg-red-500 rounded-full text-white flex item-center justify-center w-[25px] h-[25px] absolute translate-x-5 -translate-y-[5px]">
+              <div className="bg-red-500 rounded-full text-white flex item-center justify-center w-[25px] h-[25px] absolute translate-x-5 -translate-y-[5px] max-sm:w-[20px] max-sm:h-[20px] max-sm:text-[12px] max-sm:translate-x-4">
                 <p>{cartItemTotal}</p>
               </div>
             )}
           </div>
         </SheetTrigger>
-        <SheetContent className="w-full max-w-[800px]">
+        <SheetContent className="w-full max-w-[800px] overflow-y-auto">
           <SheetHeader>
             <SheetTitle className="text-semibold text-3xl">My Cart</SheetTitle>
             <SheetDescription></SheetDescription>
